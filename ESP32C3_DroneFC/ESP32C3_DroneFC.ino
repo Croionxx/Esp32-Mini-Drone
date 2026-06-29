@@ -25,9 +25,9 @@
  * ║              ── BACK ──                                                  ║
  * ║                                                                          ║
  * ║  Motor index → LEDC channel → GPIO pin:                                 ║
- * ║    M0 Front-Left  CW  → ch0 → GPIO6                                     ║
- * ║    M1 Front-Right CCW → ch1 → GPIO7                                     ║
- * ║    M2 Rear-Left   CCW → ch2 → GPIO8                                     ║
+ * ║    M0 Front-Left  CW  → ch0 → GPIO7                                     ║
+ * ║    M1 Front-Right CCW → ch1 → GPIO8                                     ║
+ * ║    M2 Rear-Left   CCW → ch2 → GPIO6                                     ║
  * ║    M3 Rear-Right  CW  → ch3 → GPIO9                                     ║
  * ╠══════════════════════════════════════════════════════════════════════════╣
  * ║  CONTROL ARCHITECTURE                                                    ║
@@ -87,10 +87,10 @@
 //   Adjust these to match your exact ESP32-C3 board breakout.
 #define PIN_SDA             4
 #define PIN_SCL             5
-#define PIN_MOTOR_0         6         // Front-Left  (CW)
-#define PIN_MOTOR_1         7         // Front-Right (CCW)
-#define PIN_MOTOR_2         8         // Rear-Left   (CCW)
-#define PIN_MOTOR_3         9         // Rear-Right  (CW)
+#define PIN_MOTOR_0         7         // Front-Left  (CW)   — GPIO7 confirmed FL on bench test
+#define PIN_MOTOR_1         8         // Front-Right (CCW)  — GPIO8 confirmed FR on bench test
+#define PIN_MOTOR_2         6         // Rear-Left   (CCW)  — GPIO6 confirmed RL on bench test
+#define PIN_MOTOR_3         9         // Rear-Right  (CW)   — GPIO9 confirmed RR on bench test (unchanged)
 #define PIN_BUZZER          0
 #define PIN_LED             2
 #define PIN_BAT_ADC         1         // Must be an ADC1 pin on ESP32-C3
